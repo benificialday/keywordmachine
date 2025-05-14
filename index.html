@@ -5,7 +5,6 @@
   <title>비밀번호 보호 페이지</title>
   <style>
     body { font-family: sans-serif; text-align: center; padding-top: 100px; }
-    #content { display: none; margin-top: 20px; }
     input, button { padding: 10px; font-size: 16px; }
     #error { color: red; margin-top: 10px; }
   </style>
@@ -16,18 +15,12 @@
   <button onclick="checkPwd()">입력</button>
   <p id="error"></p>
 
-  <div id="content">
-    <p>접근이 허용되었습니다. 아래 링크를 클릭하세요:</p>
-    <a href="https://chatgpt.com/g/g-6823542027c88191808a0ffbc4690af7-godanga-kiweodeu-japangi-caeti" target="_blank">제한된 링크로 이동</a>
-  </div>
-
   <script>
     function checkPwd() {
       var pwd = document.getElementById('pwd').value;
       var correct = '1234'; // 원하는 비밀번호로 변경하세요
       if (pwd === correct) {
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('error').textContent = '';
+        window.location.href = 'https://chatgpt.com/g/g-6823542027c88191808a0ffbc4690af7-godanga-kiweodeu-japangi-caeti';
       } else {
         document.getElementById('error').textContent = '비밀번호가 올바르지 않습니다.';
         document.getElementById('pwd').value = '';
